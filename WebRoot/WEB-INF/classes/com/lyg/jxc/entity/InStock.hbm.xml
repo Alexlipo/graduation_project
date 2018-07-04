@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lyg.jxc.entity">
+	<class name="InStock" table="inStock" >
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+		<property name="code" type="java.lang.String">
+			<column name="code" length="20" not-null="true" />
+		</property>
+		<many-to-one name="admin" column="admin_id" class="Admin" lazy="false"></many-to-one>
+		<many-to-one name="purchaseOrder" column="purchaseOrder_id" class="PurchaseOrder" lazy="false"></many-to-one>
+		<property name="inStockDate" type="java.sql.Timestamp">
+			<column name="inStockDate" length="19" not-null="true" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="200" />
+		</property>
+		 
+	</class>
+	
+	
+	
+
+</hibernate-mapping>

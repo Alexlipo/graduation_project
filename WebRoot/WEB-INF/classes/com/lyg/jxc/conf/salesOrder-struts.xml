@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="salesOrder-action" namespace="/" extends="base-default">
+		<action name="salesOrder_*" class="com.lyg.jxc.action.SalesOrderAction" method="{1}">
+			<result name="{1}">/WEB-INF/jsp/jxc/salesOrder/{1}.jsp</result>
+			<result name="list" type="redirectAction">
+				<param name="actionName">salesOrder_listUI</param>
+			</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lyg.jxc.entity">
+	<class name="Admin" table="admin" >
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid.hex" />
+		</id>	
+		<property name="account" type="java.lang.String">
+			<column name="account" length="20" not-null="true" />
+		</property>
+		<property name="pwd" type="java.lang.String">
+			<column name="pwd" length="20" not-null="true" />
+		</property>
+		<property name="realName" type="java.lang.String">
+			<column name="realName" length="20" />
+		</property>
+		<property name="gender" type="java.lang.Boolean">
+			<column name="gender" />
+		</property>
+		<property name="tel" type="java.lang.String">
+			<column name="tel" length="11" not-null="true" />
+		</property>
+		 
+	</class>
+	
+</hibernate-mapping>

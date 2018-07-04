@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.lyg.jxc.entity">
+	<class name="PurchaseOrder" table="purchaseOrder" >
+		<id name="id" type="java.lang.String">
+			<column name="id" length="32" />
+			<generator class="uuid.hex" />
+		</id>
+		<many-to-one name="supplier" column="supplier_id" class="Supplier" lazy="false"></many-to-one>
+		<many-to-one name="medicinal" column="medicinal_id" class="Medicinal" lazy="false"></many-to-one>
+		<property name="quantity" type="java.lang.Float">
+			<column name="quantity" length="4" not-null="true" />
+		</property>
+		<property name="unit_price" type="java.lang.Float">
+			<column name="unit_price" length="8" not-null="true" />
+		</property>
+		<property name="total_Money" type="java.lang.Float">
+			<column name="total_Money" length="8" not-null="true" />
+		</property>
+		<property name="code" type="java.lang.String">
+			<column name="code" length="20" not-null="true" />
+		</property>
+		<property name="order_date" type="java.sql.Timestamp">
+			<column name="order_date" length="19" not-null="true" />
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="address" length="50" not-null="true" />
+		</property>
+		<property name="transportation" type="java.lang.String">
+			<column name="transportation" length="10" />
+		</property>
+		<property name="deliver_date" type="java.util.Date">
+			<column name="deliver_date" length="10" not-null="true" />
+		</property>
+		<property name="remark" type="java.lang.String">
+			<column name="remark" length="200" />
+		</property>
+		<property name="status" type="java.lang.Boolean">
+			<column name="status" />
+		</property>
+	</class>
+	
+	
+	
+
+</hibernate-mapping>
